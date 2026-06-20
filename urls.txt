@@ -1,0 +1,5 @@
+# 每行一个 YouTube URL。# 开头的行被忽略。
+# 跑：python scripts\ytlearn.py fetch
+# 在这里粘贴你想学的视频链接：
+https://www.youtube.com/watch?v=eRS3CmvrOvA
+

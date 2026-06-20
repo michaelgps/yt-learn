@@ -1,0 +1,20 @@
+# 中间产物 —— 大、可从 YouTube 重新生成，不入库
+raw/
+clean/
+
+# 字幕原文（受版权约束、可重新下载）
+*.vtt
+*.srt
+*.info.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 编辑器/系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
