@@ -29,8 +29,7 @@ python scripts/ytlearn.py status
 | 路径 | 内容 | 入库 |
 |------|------|:---:|
 | `scripts/ytlearn.py` | 下载+清洗 CLI | ✅ |
-| `notes/` | 单篇精华笔记 | ✅ |
-| `knowledge/` `rejected/` | 高分(≥4) / 低分(≤2) 归档 | ✅ |
+| `notes/` | 全部精华笔记，文件名以评分开头（`4-...md`） | ✅ |
 | `index.md` | 按评分排序的总表 | ✅ |
 | `SUMMARY_SCHEMA.md` | 总结模板与排版规范 | ✅ |
 | `raw/` `clean/` | 字幕原文与清洗产物 | ❌ 可重新生成 |

@@ -224,13 +224,11 @@ def cmd_fetch(args):
 
 
 def noted_ids():
-    """从 notes/ 和 knowledge/ 和 rejected/ 里抽出已总结的 video_id。
-    笔记文件名是可读 slug，video_id 存在正文里，所以靠内容判重而非文件名。"""
+    """从 notes/ 里抽出已总结的 video_id。
+    笔记文件名是 `<评分>-<slug>.md`，video_id 存在正文里，所以靠内容判重而非文件名。"""
     ids = set()
-    for d in (NOTES_DIR, ROOT / "knowledge", ROOT / "rejected"):
-        if not d.exists():
-            continue
-        for p in d.glob("*.md"):
+    if NOTES_DIR.exists():
+        for p in NOTES_DIR.glob("*.md"):
             txt = p.read_text(encoding="utf-8", errors="ignore")
             for m in re.findall(r"(?:video_id:\s*|youtu\.be/|v=)([A-Za-z0-9_-]{11})", txt):
                 ids.add(m)

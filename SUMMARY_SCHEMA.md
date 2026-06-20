@@ -5,9 +5,10 @@
 
 **语言**：中英混合 —— 技术术语保留英文（MCP, agentic loop, context window），叙述用中文。
 
-## 文件命名
-- 笔记文件名用**可读 kebab-case slug**（取自标题精炼），不要用 video_id。
-  例：`claude-code-6-best-skills.md`、`mcp-server-from-scratch.md`。
+## 文件命名与存放
+- **所有笔记都放在 `notes/` 一个目录**（不再按分数拆 knowledge/rejected 文件夹）。
+- 文件名格式：**`<评分>-<可读 kebab-case slug>.md`**，评分开头便于排序。
+  例：`4-claude-ai-operating-system-four-cs.md`、`3-claude-code-6-best-skills.md`。
 - video_id **写进正文**第二行（`video_id: xxx` + youtu.be 链接），判重靠它，不靠文件名。
 
 ## 排版原则（重要 —— 要清爽可扫，不要密集 bullet 墙）
@@ -50,7 +51,6 @@
 ```
 
 ## 归档规则
-- 总分 ≥ 4 → `knowledge/`，index 标 🟢。
-- 总分 3 → 留 `notes/`，index 标 🟡。
-- 总分 ≤ 2 → `rejected/`，index 标 🔴 + 一行说明为什么不值得。
-- 每次总结后更新 `index.md`（按评分排序的总表）。
+- 所有笔记进 `notes/`，文件名以评分开头（见上）。高/低价值用 **index.md 的评分 emoji** 区分，不靠分文件夹。
+  - 🟢 ≥4 · 🟡 3 · 🔴 ≤2（≤2 时在 index 里加一行"为什么不值得"）。
+- 每次总结后更新 `index.md`（按评分从高到低排序的总表）。
