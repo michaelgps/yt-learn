@@ -7,8 +7,8 @@
 
 ## 文件命名与存放
 - **所有笔记都放在 `notes/` 一个目录**（不再按分数拆 knowledge/rejected 文件夹）。
-- 文件名格式：**`<评分>-<可读 kebab-case slug>.md`**，评分开头便于排序。
-  例：`4-claude-ai-operating-system-four-cs.md`、`3-claude-code-6-best-skills.md`。
+- 文件名格式：**`<评分>-<简短中文>-<english-slug>.md`**，评分开头便于排序，中英双语便于辨认。
+  例：`4-第二大脑AI操作系统-claude-second-brain-ai-os.md`、`3-最值得装的6个skill-claude-code-6-best-skills.md`。
 - video_id **写进正文**第二行（`video_id: xxx` + youtu.be 链接），判重靠它，不靠文件名。
 
 ## 排版原则（重要 —— 要清爽可扫，不要密集 bullet 墙）
