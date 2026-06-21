@@ -8,44 +8,45 @@
 
 ---
 
-> ### 🟡 3/5 — 建议 SKIP，读这篇即可
-> 干货 = 下面一张工具清单。视频 60% 在讲"怎么把 AI 自动化卖给中小企业"，对你无意义。
+> ### 🟡 3/5 — 不用看，读这篇就够
+> 全部干货就是下面这张工具清单。视频六成在讲"怎么把 AI 接单卖给小公司"，对你没意义。
 
 | 维度 | 评级 |
 |------|------|
-| 新颖度 | ★★☆☆☆ 概念你都懂，新的只是"具体哪些工具" |
-| 可操作性 | ★★★★☆ 6 个都能直接装来用 |
-| 深度 | ★★☆☆☆ 只有 what/why，几乎没讲机制 |
+| 新鲜感 | ★★☆☆☆ 道理你都懂，新的只是"具体哪几个工具" |
+| 能不能上手用 | ★★★★☆ 6 个都能直接装来用 |
+| 深度 | ★★☆☆☆ 只说"是什么、有啥用"，不讲原理 |
 
 ---
 
-## 📦 6+1 个工具
+## 📦 6+1 个工具（一句话讲清每个干嘛）
 
-| 工具 | 是什么 | 解决什么问题 |
-|------|--------|------------|
-| **Skill Creator** <br>`官方` | 自然语言/SOP → Claude 自动起草·测试·打包 skill | 免去手写 `SKILL.md`、调 trigger 的学习曲线 |
-| **Superpowers** <br>`社区 ~150k★` | 强制 Claude 走资深流程：plan → 先写测试 → 隔离环境 → 两段自审 | 一把过质量从 ~60% 拉到 ~80%，少 debug 轮次 |
-| **GSD** (Get Shit Done) | 每个任务 spawn 干净 context 的 sub-agent + quality gate + autonomous 模式 | **context rot**：长 session 中途退化、忘需求 |
-| **`/review` · `/ultra review`** <br>`内置` | review 本地快审；ultra 上传云端多 agent 并行攻，bug 须独立复现才报 | 合并前抓 Claude 自己漏的 bug，少假阳性 |
-| **Context Mode** <br>`MCP+hooks` | tool call 走 sandbox 只回必要结果；本地 SQL 记 session，compact 时重注入 | tool 输出撑爆 context、compact 后失忆 |
-| **ClaudeMem** | 跨 session 记忆：hook 进生命周期，语义摘要存 SQLite+向量检索，自动写 `CLAUDE.md` | 每开新 session 重新解释项目的"启动税" |
-| **Front-end Design** <br>`官方·bonus` | 让产出 UI 不那么"AI 味" | —（建议全局装） |
+| 工具 | 一句话说它是什么 | 帮你解决的麻烦 |
+|------|----------------|--------------|
+| **Skill Creator**<br>`官方` | 你用大白话描述想要啥，它自动帮你把"技能"写好、测好、打包 | 省去自己手写技能文件、调格式的折腾 |
+| **Superpowers**<br>`社区 ~15 万星` | 逼着 AI 按老练程序员的流程走：先规划 → 先写测试 → 单独环境里干 → 自己审两遍 | 防止 AI 急着写、看着对一跑就崩；一把过质量更高，少返工 |
+| **GSD**<br>(Get Shit Done) | 把大活儿拆给多个"分身"各干一块，每个分身脑子都是干净的；还能全自动跑 | 一个对话聊久了 AI 会忘事、糊弄（业内叫 *context rot*），这个专治 |
+| **`/review`·`/ultra review`**<br>`内置，无需装` | 写完代码让 AI 审一遍找 bug；`ultra` 更狠，丢到云端开一队 AI 从不同角度挑，**bug 必须真复现了才报** | 合并代码前抓出 AI 自己没发现的坑，且很少误报 |
+| **Context Mode**<br>`插件` | AI 每次调工具会吐一大堆没用的输出占地方，它只把有用的留下；还在本地记账，**对话被压缩后能恢复"刚才干到哪了"** | 输出太多把 AI 的"记忆"撑爆、压缩后失忆 |
+| **ClaudeMem**<br>`插件` | **跨对话的长期记忆**：自动记住你每次干了啥、改了啥，下次打开自动想起来 | 每开个新对话都得把项目重讲一遍的"开场税" |
+| **Front-end Design**<br>`官方·附赠` | 让 AI 做出来的网页界面不那么"一眼 AI 味" | —（建议设成全局，随处生效） |
+
+> 注：上面有的叫"技能(skill)"、有的叫"插件(plugin)"——区别不重要，都是给 Claude Code 加的外挂，让它某件事干得更好。
 
 ---
 
 ## ✅ 能直接搬进你工作流的
 
-- **组合拳**(全片唯一有结构的洞见)：
-  `Superpowers 出流程` → `GSD 给每任务干净 context` → 合并前 `/ultra review` 终审。三者解决正交问题。
-- **通用 skill 装 user/global scope**(skill-creator、design)，随处自动可用。
-- **`/ultra review` 使用门槛**：需 CC ≥ 2.1.86 + Claude 账号登录(纯 API key 不行)、跑 10–20 分钟(后台)、Pro/Max 3 次免费后约 \$5–20/次。→ 只在大重构 / 碰 payment·auth·DB migration 时用，平时用 `/review`。
+- **三件套组合拳**（全片唯一成体系的点）：先用 **Superpowers** 把流程立起来 → 用 **GSD** 让每个子任务都有干净脑子 → 合并代码前用 **`/ultra review`** 做最后体检。三个各管一段，不重叠。
+- **通用的技能装成"全局"**（比如 Skill Creator、Front-end Design），这样在任何项目里都自动能用，不用每个项目重装。
+- **`/ultra review` 用之前要知道**：要 Claude Code ≥ 2.1.86、得用 Claude 账号登录（光有 API key 不行）、跑一次 10–20 分钟（后台跑，不挡你干别的）、Pro/Max 套餐免费 3 次、之后约 \$5–20 一次。→ 平时用快的 `/review`，只在大改动、或碰**支付 / 登录 / 数据库**这种出事代价高的地方才上 `ultra`。
 
-## 💡 值得内化的判断框架
+## 💡 最值得记住的一个判断
 
-> **"省时间 ≠ 省 token"**。Superpowers/GSD 费 token 但省返工；Context Mode/ClaudeMem 才真省 token(靠裁剪进 context 的量)。评估任何工具时套这个区分。
+> **"省时间"和"省钱"是两回事**。Superpowers、GSD 其实更费钱（要多花 AI 的调用量），但帮你省返工时间；只有 Context Mode、ClaudeMem 是真省钱（靠少塞没用的东西给 AI）。以后评估任何工具，先分清它省的是哪一个。
 
-## ⚠️ 待你自测(数字均来自各 repo 自报)
+## ⚠️ 这些数字都是各工具自己宣传的，别全信
 
-Superpowers 150k★ · Context Mode 315KB→5KB · ClaudeMem 10× 检索节省 · ultra review 价格(作者自己说"可能已变")。
+Superpowers 15 万星 · Context Mode 号称把输出从 315KB 压到 5KB · ClaudeMem 号称省 10 倍调用量 · `/ultra review` 价格（作者自己都说"可能已经变了"）。
 
-`#claude-code` `#skills` `#plugins` `#context-engineering` `#subagents` `#code-review` `#memory`
+`#claude-code` `#工具清单` `#代码审查` `#省钱技巧` `#记忆`
