@@ -4,6 +4,7 @@
 
 | 评分 | 视频 | 频道 | 时长 | 看？ | 笔记 |
 |:---:|------|------|:---:|:---:|------|
+| 🟢 4 | 用 Karpathy 的 Auto Research 让技能自我改进 | Ben AI | 19m46s | SKIM | [打开](notes/4-自我改进优化循环-karpathy-autoresearch.md) |
 | 🟢 4 | 把 Claude 搭成"第二大脑 / AI OS"(Four C's) | Nate Herk | 34m20s | SKIM | [打开](notes/4-第二大脑AI操作系统-claude-second-brain-ai-os.md) |
 | 🟡 3 | Claude Code 最值得装的 6 个 Skill | Nate Herk | 13m39s | SKIP | [打开](notes/3-最值得装的6个skill-claude-code-6-best-skills.md) |
 
